@@ -38,6 +38,37 @@ array.map(function(num) {
 ```
 In ruby, each element in the array is yielded to the block one at a time. This happens immediately (right when we call each or map) not at some later point in time. In javascript, each element in the array is passed to the function, one at a time. Again, this happens immediately (right when we call forEach for map).
 
+```rb
+array = ["Ty", "Dakota", "Samantha"]
+longer_than_6 = array.select do |name|
+  name.length > 6
+end
+```
+
+```js
+let array = ["Ty", "Dakota", "Samantha"]
+let longerThanSix = array.filter(function(name){
+  return name.length > 6
+})
+```
+
+JavaScript for loop <=> ruby while loop
+
+```rb
+i = 0 
+while i < array.length 
+  array[i] # the element at the i index in the array
+  i += 1
+end
+```
+
+```js
+let array = [1,2,3]
+for(let i = 0 ; i < array.length ; i++) {
+  array[i] // the element at the i index in the array
+}
+```
+
 ## Synchronous vs Asynchronous Code
 
 A function that is passed as an argument to another function is called a `callback function`. If the callback function is invoked immediately, then it is called a `synchronous` function. If it's called at some time in the future, it's called an `asynchronous function`. 
